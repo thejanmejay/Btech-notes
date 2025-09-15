@@ -1,0 +1,193 @@
+{
+  "CSE": {
+    "1st-Year": {
+      "1st-Semester": {
+        "Mathematics-I": [
+          {
+            "title": "Calculus and Differential Equations",
+            "driveLink": "https://drive.google.com/file/d/sample1/view",
+            "size": "2.1MB",
+            "date": "2025-01-15"
+          },
+          {
+            "title": "Linear Algebra Basics",
+            "driveLink": "https://drive.google.com/file/d/sample2/view",
+            "size": "1.8MB",
+            "date": "2025-01-10"
+          }
+        ],
+        "Physics": [
+          {
+            "title": "Mechanics and Thermodynamics",
+            "driveLink": "https://drive.google.com/file/d/sample3/view",
+            "size": "3.2MB",
+            "date": "2025-01-12"
+          }
+        ],
+        "Chemistry": [
+          {
+            "title": "Organic Chemistry Fundamentals",
+            "driveLink": "https://drive.google.com/file/d/sample4/view",
+            "size": "2.5MB",
+            "date": "2025-01-08"
+          }
+        ]
+      },
+      "2nd-Semester": {
+        "Mathematics-II": [
+          {
+            "title": "Advanced Calculus",
+            "driveLink": "https://drive.google.com/file/d/sample5/view",
+            "size": "2.3MB",
+            "date": "2025-01-20"
+          }
+        ],
+        "Programming-Fundamentals": [
+          {
+            "title": "C Programming Basics",
+            "driveLink": "https://drive.google.com/file/d/sample6/view",
+            "size": "1.9MB",
+            "date": "2025-01-18"
+          }
+        ]
+      }
+    },
+    "2nd-Year": {
+      "3rd-Semester": {
+        "Data-Structures": [
+          {
+            "title": "Arrays and Linked Lists",
+            "driveLink": "https://drive.google.com/file/d/sample7/view",
+            "size": "1.2MB",
+            "date": "2025-01-25"
+          },
+          {
+            "title": "Trees and Graphs",
+            "driveLink": "https://drive.google.com/file/d/sample8/view",
+            "size": "1.7MB",
+            "date": "2025-01-22"
+          }
+        ],
+        "Computer-Networks": [
+          {
+            "title": "OSI Model and TCP/IP",
+            "driveLink": "https://drive.google.com/file/d/sample9/view",
+            "size": "2.8MB",
+            "date": "2025-01-20"
+          }
+        ],
+        "Database-Management": [
+          {
+            "title": "SQL and Relational Algebra",
+            "driveLink": "https://drive.google.com/file/d/sample10/view",
+            "size": "2.1MB",
+            "date": "2025-01-24"
+          }
+        ]
+      },
+      "4th-Semester": {
+        "Algorithms": [
+          {
+            "title": "Sorting and Searching",
+            "driveLink": "https://drive.google.com/file/d/sample11/view",
+            "size": "1.5MB",
+            "date": "2025-01-28"
+          }
+        ],
+        "Operating-Systems": [
+          {
+            "title": "Process Management",
+            "driveLink": "https://drive.google.com/file/d/sample12/view",
+            "size": "2.4MB",
+            "date": "2025-01-26"
+          }
+        ]
+      }
+    }
+  },
+  "ECE": {
+    "1st-Year": {
+      "1st-Semester": {
+        "Mathematics-I": [
+          {
+            "title": "Engineering Mathematics",
+            "driveLink": "https://drive.google.com/file/d/sample13/view",
+            "size": "2.0MB",
+            "date": "2025-01-15"
+          }
+        ],
+        "Basic-Electronics": [
+          {
+            "title": "Circuit Analysis",
+            "driveLink": "https://drive.google.com/file/d/sample14/view",
+            "size": "2.7MB",
+            "date": "2025-01-12"
+          }
+        ]
+      }
+    },
+    "2nd-Year": {
+      "3rd-Semester": {
+        "Digital-Electronics": [
+          {
+            "title": "Logic Gates and Boolean Algebra",
+            "driveLink": "https://drive.google.com/file/d/sample15/view",
+            "size": "1.8MB",
+            "date": "2025-01-22"
+          }
+        ],
+        "Signals-and-Systems": [
+          {
+            "title": "Fourier Transform",
+            "driveLink": "https://drive.google.com/file/d/sample16/view",
+            "size": "2.2MB",
+            "date": "2025-01-20"
+          }
+        ]
+      }
+    }
+  },
+  "MECH": {
+    "1st-Year": {
+      "1st-Semester": {
+        "Engineering-Mechanics": [
+          {
+            "title": "Statics and Dynamics",
+            "driveLink": "https://drive.google.com/file/d/sample17/view",
+            "size": "3.1MB",
+            "date": "2025-01-14"
+          }
+        ],
+        "Engineering-Drawing": [
+          {
+            "title": "Orthographic Projections",
+            "driveLink": "https://drive.google.com/file/d/sample18/view",
+            "size": "4.2MB",
+            "date": "2025-01-16"
+          }
+        ]
+      }
+    },
+    "2nd-Year": {
+      "3rd-Semester": {
+        "Thermodynamics": [
+          {
+            "title": "Laws of Thermodynamics",
+            "driveLink": "https://drive.google.com/file/d/sample19/view",
+            "size": "2.6MB",
+            "date": "2025-01-21"
+          }
+        ],
+        "Fluid-Mechanics": [
+          {
+            "title": "Fluid Properties and Flow",
+            "driveLink": "https://drive.google.com/file/d/sample20/view",
+            "size": "2.9MB",
+            "date": "2025-01-23"
+          }
+        ]
+      }
+    }
+  }
+}
+

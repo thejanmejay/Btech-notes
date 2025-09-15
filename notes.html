@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Notes - B.Tech Notes Hub</title>
+    <meta name="description" content="Browse and download B.Tech notes by branch, year, semester, and subject. Quality study materials for engineering students.">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>B.Tech Notes Hub</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="notes.html" class="nav-link active">Browse Notes</a>
+                <a href="upload-guidelines.html" class="nav-link">Upload Guidelines</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="page-title">Browse Notes</h1>
+                <p class="page-description">
+                    Find and download study materials for your branch, year, and semester
+                </p>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Browse Notes</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters">
+        <div class="container">
+            <div class="filters-container">
+                <h2 class="filters-title">
+                    <i class="fas fa-filter"></i>
+                    Filter Notes
+                </h2>
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label for="branch-select" class="filter-label">
+                            <i class="fas fa-code-branch"></i>
+                            Branch
+                        </label>
+                        <select id="branch-select" class="filter-select">
+                            <option value="">Select Branch</option>
+                            <option value="CSE">Computer Science & Engineering</option>
+                            <option value="ECE">Electronics & Communication</option>
+                            <option value="MECH">Mechanical Engineering</option>
+                            <option value="CIVIL">Civil Engineering</option>
+                            <option value="EEE">Electrical & Electronics</option>
+                            <option value="IT">Information Technology</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="year-select" class="filter-label">
+                            <i class="fas fa-calendar-alt"></i>
+                            Year
+                        </label>
+                        <select id="year-select" class="filter-select" disabled>
+                            <option value="">Select Year</option>
+                            <option value="1st-Year">1st Year</option>
+                            <option value="2nd-Year">2nd Year</option>
+                            <option value="3rd-Year">3rd Year</option>
+                            <option value="4th-Year">4th Year</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="semester-select" class="filter-label">
+                            <i class="fas fa-book"></i>
+                            Semester
+                        </label>
+                        <select id="semester-select" class="filter-select" disabled>
+                            <option value="">Select Semester</option>
+                            <option value="1st-Semester">1st Semester</option>
+                            <option value="2nd-Semester">2nd Semester</option>
+                            <option value="3rd-Semester">3rd Semester</option>
+                            <option value="4th-Semester">4th Semester</option>
+                            <option value="5th-Semester">5th Semester</option>
+                            <option value="6th-Semester">6th Semester</option>
+                            <option value="7th-Semester">7th Semester</option>
+                            <option value="8th-Semester">8th Semester</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="subject-select" class="filter-label">
+                            <i class="fas fa-book-open"></i>
+                            Subject
+                        </label>
+                        <select id="subject-select" class="filter-select" disabled>
+                            <option value="">Select Subject</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-actions">
+                    <button id="clear-filters" class="btn btn-secondary">
+                        <i class="fas fa-times"></i>
+                        Clear Filters
+                    </button>
+                    <button id="search-notes" class="btn btn-primary">
+                        <i class="fas fa-search"></i>
+                        Search Notes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results">
+        <div class="container">
+            <div class="results-header">
+                <h2 class="results-title">
+                    <i class="fas fa-file-alt"></i>
+                    Available Notes
+                </h2>
+                <div class="results-count">
+                    <span id="results-count">Select filters to view notes</span>
+                </div>
+            </div>
+            
+            <!-- Loading State -->
+            <div id="loading-state" class="loading-state" style="display: none;">
+                <div class="loading-spinner">
+                    <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <p>Loading notes...</p>
+            </div>
+
+            <!-- Empty State -->
+            <div id="empty-state" class="empty-state">
+                <div class="empty-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>Start Your Search</h3>
+                <p>Select your branch, year, semester, and subject to find relevant study materials.</p>
+                <div class="empty-suggestions">
+                    <h4>Popular Searches:</h4>
+                    <div class="suggestion-tags">
+                        <button class="suggestion-tag" data-branch="CSE" data-year="2nd-Year" data-semester="3rd-Semester">
+                            CSE - 2nd Year - 3rd Sem
+                        </button>
+                        <button class="suggestion-tag" data-branch="ECE" data-year="2nd-Year" data-semester="3rd-Semester">
+                            ECE - 2nd Year - 3rd Sem
+                        </button>
+                        <button class="suggestion-tag" data-branch="MECH" data-year="2nd-Year" data-semester="3rd-Semester">
+                            MECH - 2nd Year - 3rd Sem
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notes Grid -->
+            <div id="notes-grid" class="notes-grid" style="display: none;">
+                <!-- Notes will be populated here by JavaScript -->
+            </div>
+
+            <!-- No Results State -->
+            <div id="no-results" class="no-results" style="display: none;">
+                <div class="no-results-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <h3>No Notes Found</h3>
+                <p>We couldn't find any notes matching your criteria. Try adjusting your filters or check back later for new uploads.</p>
+                <div class="no-results-actions">
+                    <button id="suggest-upload" class="btn btn-secondary">
+                        <i class="fas fa-upload"></i>
+                        Suggest Upload
+                    </button>
+                    <a href="contact.html" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i>
+                        Contact Support
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Note Modal -->
+    <div id="note-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Download Note</h3>
+                <button class="modal-close" id="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="note-details">
+                    <div class="note-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="note-info">
+                        <h4 id="modal-note-title">Note Title</h4>
+                        <div class="note-meta">
+                            <span class="note-size">
+                                <i class="fas fa-weight"></i>
+                                <span id="modal-note-size">Size</span>
+                            </span>
+                            <span class="note-date">
+                                <i class="fas fa-calendar"></i>
+                                <span id="modal-note-date">Date</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Future Payment Section (Currently Hidden) -->
+                <div class="payment-section" style="display: none;">
+                    <div class="payment-info">
+                        <h4>Premium Content</h4>
+                        <p>This note requires a one-time payment of ₹9 to access.</p>
+                        <div class="payment-methods">
+                            <button class="payment-btn">
+                                <i class="fab fa-google-pay"></i>
+                                Pay with UPI
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="modal-cancel">Cancel</button>
+                <a href="#" class="btn btn-primary" id="modal-download" target="_blank">
+                    <i class="fas fa-download"></i>
+                    Download Now
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>B.Tech Notes Hub</span>
+                    </div>
+                    <p class="footer-description">
+                        Your trusted partner for academic success. Quality study materials for engineering students.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="notes.html">Browse Notes</a></li>
+                        <li><a href="upload-guidelines.html">Upload Guidelines</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Help Center</a></li>
+                        <li><a href="contact.html">Report Issue</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+<p>&copy; 2025 B.Tech Notes Hub. All rights reserved. Developed by Bhumi Singh.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/notes.js"></script>
+</body>
+</html>
+
