@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  db:
+    image: mysql:8.0
+    container_name: btech_notes_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: notesdb
+      MYSQL_USER: notesuser
+      MYSQL_PASSWORD: notepass
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
